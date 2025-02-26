@@ -9,4 +9,3 @@
     </TableView>
     <Button text="Register" onAction="#handleRegisterCourse"/>
 </VBox>
-
