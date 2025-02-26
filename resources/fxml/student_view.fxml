@@ -1,1 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.crs.controller.StudentController">
+    <Label text="Course Registration System"/>
+    <TableView fx:id="courseTable">
+        <!-- Define table columns here -->
+    </TableView>
+    <Button text="Register" onAction="#handleRegisterCourse"/>
+</VBox>
 
