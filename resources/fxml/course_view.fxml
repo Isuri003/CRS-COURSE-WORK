@@ -1,1 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.text.Font?>
+
+<GridPane fx:controller="com.crs.controller.CourseViewController" xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" hgap="10" vgap="10">
+    <!-- Title -->
+    <Label text="Course Registration" GridPane.columnIndex="0" GridPane.rowIndex="0" font="20"/>
+
+    <!-- Search Bar -->
+    <Label text="Search Courses:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="searchField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <!-- Button to search -->
+    <Button text="Search" fx:id="searchButton" onAction="#searchCourses" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+    <!-- Available Courses List -->
+    <TableView fx:id="courseTable" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="3">
+        <columns>
+            <TableColumn fx:id="courseIdColumn" text="Course ID" prefWidth="100"/>
+            <TableColumn fx:id="courseTitleColumn" text="Course Title" prefWidth="250"/>
+            <TableColumn fx:id="creditHoursColumn" text="Credit Hours" prefWidth="100"/>
+            <TableColumn fx:id="capacityColumn" text="Available Capacity" prefWidth="150"/>
+            <TableColumn fx:id="enrollmentColumn" text="Enroll" prefWidth="100">
+                <cellFactory>
+                    <TableCell fx:controller="com.crs.controller.CourseViewController" fx:id="enrollCell" onAction="#enrollInCourse"/>
+                </cellFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+
+    <!-- Enroll Button -->
+    <Button text="Enroll" fx:id="enrollButton" onAction="#enrollInCourse" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+
+    <!-- Drop Course Button -->
+    <Button text="Drop Course" fx:id="dropButton" onAction="#dropCourse" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <!-- Status Message -->
+    <Label fx:id="statusMessage" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="3" alignment="CENTER"/>
+</GridPane>
 
